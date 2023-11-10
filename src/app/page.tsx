@@ -6,20 +6,16 @@ import Typography from "@mui/material/Typography";
 import MuiLink from "@mui/material/Link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
-type Props = {
-  params: { language: string };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { t } = await getServerTranslation(params.language, "home");
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await getServerTranslation("en", "home");
 
   return {
     title: t("title"),
   };
 }
 
-export default async function Home({ params }: Props) {
-  const { t } = await getServerTranslation(params.language, "home");
+export default async function Home() {
+  const { t } = await getServerTranslation("en", "home");
 
   return (
     <Container maxWidth="md">

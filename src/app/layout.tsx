@@ -1,6 +1,6 @@
 import ResponsiveAppBar from "@/components/app-bar";
 import AuthProvider from "@/services/auth/auth-provider";
-import "../globals.css";
+import "./globals.css";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -8,7 +8,6 @@ import "@fontsource/roboto/700.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import { dir } from "i18next";
 import "@/services/i18n/config";
-import { languages } from "@/services/i18n/config";
 import type { Metadata } from "next";
 import SnackbarProvider from "@/components/snackbar-provider";
 import { getServerTranslation } from "@/services/i18n";
@@ -22,31 +21,21 @@ import GoogleAuthProvider from "@/services/social-auth/google/google-auth-provid
 import FacebookAuthProvider from "@/services/social-auth/facebook/facebook-auth-provider";
 import ConfirmDialogProvider from "@/components/confirm-dialog/confirm-dialog-provider";
 
-type Props = {
-  params: { language: string };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { t } = await getServerTranslation(params.language, "common");
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await getServerTranslation("en", "common");
 
   return {
     title: t("title"),
   };
 }
 
-export function generateStaticParams() {
-  return languages.map((language) => ({ language }));
-}
-
 export default function RootLayout({
   children,
-  params: { language },
 }: {
   children: React.ReactNode;
-  params: { language: string };
 }) {
   return (
-    <html lang={language} dir={dir(language)}>
+    <html lang={"en"} dir={dir("en")}>
       <body suppressHydrationWarning>
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
