@@ -47,7 +47,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={language} dir={dir(language)}>
-      <body>
+      <body suppressHydrationWarning>
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
           <ThemeProvider>

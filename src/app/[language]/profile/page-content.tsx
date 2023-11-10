@@ -17,6 +17,7 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
 
 function Profile() {
   const { user } = useAuth();
+
   const { t } = useTranslation("profile");
   return (
     <Container maxWidth="sm">

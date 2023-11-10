@@ -1,4 +1,3 @@
-"use client";
 import { useRouter } from "next/navigation";
 import useAuth from "./use-auth";
 import React, { FunctionComponent, useEffect } from "react";
@@ -31,11 +30,11 @@ function withPageRequiredAuth(
 
     useEffect(() => {
       const check = () => {
-        if (
-          (user && user?.role?.id && optionRoles.includes(user?.role.id)) ||
-          !isLoaded
-        )
+        const hasRequiredRole =
+          user && user?.role?.id && optionRoles.includes(user?.role.id);
+        if (hasRequiredRole || !isLoaded) {
           return;
+        }
 
         const currentLocation = window.location.toString();
         const returnToPath =
@@ -57,9 +56,9 @@ function withPageRequiredAuth(
       check();
     }, [user, isLoaded, router, language]);
 
-    return user && user?.role?.id && optionRoles.includes(user?.role.id) ? (
-      <Component {...props} />
-    ) : null;
+    const isAuthorized =
+      user && user?.role?.id && optionRoles.includes(user?.role.id);
+    return isAuthorized ? <Component {...props} /> : null;
   };
 }
 

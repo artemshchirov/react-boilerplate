@@ -8,7 +8,7 @@ export function getOptions(
   namespace = defaultNamespace
 ) {
   return {
-    debug: process.env.NODE_ENV === "development",
+    debug: process.env.DEBUG_I18N === "true",
     supportedLngs: languages,
     fallbackLng: fallbackLanguage,
     lng: language,
