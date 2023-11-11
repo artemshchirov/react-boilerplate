@@ -1,6 +1,6 @@
-import { useFileUploadService } from "@/services/api/services/files";
-import { FileEntity } from "@/services/api/types/file-entity";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
+import { useFileUploadService } from "@web/services/api/services/files";
+import { FileEntity } from "@web/services/api/types/file-entity";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";

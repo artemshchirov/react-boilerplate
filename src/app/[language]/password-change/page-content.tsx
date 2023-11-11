@@ -1,18 +1,18 @@
 "use client";
 import Button from "@mui/material/Button";
-import withPageRequiredGuest from "@/services/auth/with-page-required-guest";
+import withPageRequiredGuest from "@web/services/auth/with-page-required-guest";
 import { useForm, FormProvider, useFormState } from "react-hook-form";
-import { useAuthResetPasswordService } from "@/services/api/services/auth";
+import { useAuthResetPasswordService } from "@web/services/api/services/auth";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import FormTextInput from "@/components/form/text-input/form-text-input";
+import FormTextInput from "@web/components/form/text-input/form-text-input";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useSnackbar } from "notistack";
 import { useRouter } from "next/navigation";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import { useTranslation } from "@/services/i18n/client";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import { useTranslation } from "@web/services/i18n/client";
 
 type PasswordChangeFormData = {
   password: string;

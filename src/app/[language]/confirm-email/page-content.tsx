@@ -3,13 +3,13 @@
 import { useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import { useAuthConfirmEmailService } from "@/services/api/services/auth";
+import { useAuthConfirmEmailService } from "@web/services/api/services/auth";
 import { useRouter } from "next/navigation";
 import { useSnackbar } from "notistack";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import { useTranslation } from "@/services/i18n/client";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import { useTranslation } from "@web/services/i18n/client";
 
 export default function ConfirmEmail() {
   const { enqueueSnackbar } = useSnackbar();

@@ -5,26 +5,26 @@ import { useForm, FormProvider, useFormState } from "react-hook-form";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import FormTextInput from "@/components/form/text-input/form-text-input";
+import FormTextInput from "@web/components/form/text-input/form-text-input";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import withPageRequiredAuth from "@/services/auth/with-page-required-auth";
+import withPageRequiredAuth from "@web/services/auth/with-page-required-auth";
 import { useEffect } from "react";
 import { useSnackbar } from "notistack";
-import Link from "@/components/link";
-import FormAvatarInput from "@/components/form/avatar-input/form-avatar-input";
-import { FileEntity } from "@/services/api/types/file-entity";
-import useLeavePage from "@/services/leave-page/use-leave-page";
+import Link from "@web/components/link";
+import FormAvatarInput from "@web/components/form/avatar-input/form-avatar-input";
+import { FileEntity } from "@web/services/api/types/file-entity";
+import useLeavePage from "@web/services/leave-page/use-leave-page";
 import Box from "@mui/material/Box";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import { useTranslation } from "@/services/i18n/client";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import { useTranslation } from "@web/services/i18n/client";
 import {
   useGetUserService,
   usePatchUserService,
-} from "@/services/api/services/users";
+} from "@web/services/api/services/users";
 import { useParams } from "next/navigation";
-import { Role, RoleEnum } from "@/services/api/types/role";
-import FormSelectInput from "@/components/form/select/form-select";
+import { Role, RoleEnum } from "@web/services/api/types/role";
+import FormSelectInput from "@web/components/form/select/form-select";
 
 type EditUserFormData = {
   email: string;

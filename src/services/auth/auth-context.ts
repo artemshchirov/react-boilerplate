@@ -1,7 +1,7 @@
 "use client";
 
-import { Tokens } from "@/services/api/types/tokens";
-import { User } from "@/services/api/types/user";
+import { Tokens } from "@web/services/api/types/tokens";
+import { User } from "@web/services/api/types/user";
 import { createContext } from "react";
 
 export type TokensInfo = Tokens | null;

@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import useAuth from "./use-auth";
 import React, { FunctionComponent, useEffect } from "react";
-import useLanguage from "@/services/i18n/use-language";
+import useLanguage from "@web/services/i18n/use-language";
 
 type PropsType = {
   params: { slug: string };

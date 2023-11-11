@@ -11,7 +11,7 @@ import {
   ConfirmDialogOptions,
 } from "./confirm-dialog-context";
 import React, { useCallback, useMemo, useRef, useState } from "react";
-import { useTranslation } from "@/services/i18n/client";
+import { useTranslation } from "@web/services/i18n/client";
 
 function ConfirmDialogProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);

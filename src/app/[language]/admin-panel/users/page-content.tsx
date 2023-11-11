@@ -1,8 +1,8 @@
 "use client";
 
-import { RoleEnum } from "@/services/api/types/role";
-import withPageRequiredAuth from "@/services/auth/with-page-required-auth";
-import { useTranslation } from "@/services/i18n/client";
+import { RoleEnum } from "@web/services/api/types/role";
+import withPageRequiredAuth from "@web/services/auth/with-page-required-auth";
+import { useTranslation } from "@web/services/i18n/client";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -20,7 +20,7 @@ import TableRow from "@mui/material/TableRow";
 import Avatar from "@mui/material/Avatar";
 import LinearProgress from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
-import TableComponents from "@/components/table/table-components";
+import TableComponents from "@web/components/table/table-components";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -30,18 +30,18 @@ import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
-import { User } from "@/services/api/types/user";
-import Link from "@/components/link";
-import useAuth from "@/services/auth/use-auth";
-import useConfirmDialog from "@/components/confirm-dialog/use-confirm-dialog";
-import { useDeleteUsersService } from "@/services/api/services/users";
-import removeDuplicatesFromArrayObjects from "@/services/helpers/remove-duplicates-from-array-of-objects";
+import { User } from "@web/services/api/types/user";
+import Link from "@web/components/link";
+import useAuth from "@web/services/auth/use-auth";
+import useConfirmDialog from "@web/components/confirm-dialog/use-confirm-dialog";
+import { useDeleteUsersService } from "@web/services/api/services/users";
+import removeDuplicatesFromArrayObjects from "@web/services/helpers/remove-duplicates-from-array-of-objects";
 import { InfiniteData, useQueryClient } from "@tanstack/react-query";
 import UserFilter from "./user-filter";
 import { useRouter, useSearchParams } from "next/navigation";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import { UserFilterType, UserSortType } from "./user-filter-types";
-import { SortEnum } from "@/services/api/types/sort-type";
+import { SortEnum } from "@web/services/api/types/sort-type";
 
 type UsersKeys = keyof User;
 

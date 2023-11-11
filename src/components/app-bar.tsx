@@ -12,12 +12,12 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import useAuth from "@/services/auth/use-auth";
-import useAuthActions from "@/services/auth/use-auth-actions";
+import useAuth from "@web/services/auth/use-auth";
+import useAuthActions from "@web/services/auth/use-auth-actions";
 import CircularProgress from "@mui/material/CircularProgress";
-import { useTranslation } from "@/services/i18n/client";
-import Link from "@/components/link";
-import { RoleEnum } from "@/services/api/types/role";
+import { useTranslation } from "@web/services/i18n/client";
+import Link from "@web/components/link";
+import { RoleEnum } from "@web/services/api/types/role";
 import Divider from "@mui/material/Divider";
 
 function ResponsiveAppBar() {

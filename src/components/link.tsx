@@ -1,8 +1,8 @@
-import useLanguage from "@/services/i18n/use-language";
+import useLanguage from "@web/services/i18n/use-language";
 import {
   LeavePageActionsContext,
   LeavePageContext,
-} from "@/services/leave-page/leave-page-context";
+} from "@web/services/leave-page/leave-page-context";
 // Need for leave page logic
 // eslint-disable-next-line no-restricted-imports
 import NextLink, { LinkProps } from "next/link";

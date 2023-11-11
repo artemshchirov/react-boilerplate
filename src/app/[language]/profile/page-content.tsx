@@ -1,14 +1,14 @@
 "use client";
-import useAuth from "@/services/auth/use-auth";
-import withPageRequiredAuth from "@/services/auth/with-page-required-auth";
+import useAuth from "@web/services/auth/use-auth";
+import withPageRequiredAuth from "@web/services/auth/with-page-required-auth";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import Link from "@/components/link";
-import { useTranslation } from "@/services/i18n/client";
+import Link from "@web/components/link";
+import { useTranslation } from "@web/services/i18n/client";
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
   width: theme.spacing(20),

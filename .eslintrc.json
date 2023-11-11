@@ -77,10 +77,6 @@
         "message": "Do not put your regular components inside Context \".Provider\". Create new component, for example ComponentProvider. Put Provider's logic to ComponentProvider. Render \"{children} instead of regular component. Wrap regular component via new ComponentProvider \". Example: \"src/services/auth/auth-provider\""
       },
       {
-        "selector": "Property[key.name=/^(padding|margin|paddingLeft|paddingRight|paddingTop|paddingBottom|paddingVertical|marginLeft|marginRight|marginTop|marginBottom|marginVertical)$/][value.type=/^(Literal|UnaryExpression)$/]:not([value.value=\"0 !important\"]):not([value.value=\"0\"]):not([value.value=\"0 auto\"]):not([value.value=\"auto\"])",
-        "message": "Use theme.spacing() instead of literal."
-      },
-      {
         "selector": "CallExpression[callee.name=/^(useQuery|useInfiniteQuery)$/] Property[key.name=queryKey]:not(:has(Identifier[name=key]))",
         "message": "Use key created via createQueryKeys function instead of your solution"
       },
@@ -100,11 +96,11 @@
           {
             "name": "@mui/icons-material",
             "message": "Please use \"import IconName from '@mui/icons-material/IconName'\" instead."
-          },
-          {
-            "name": "next/link",
-            "message": "Please use \"import Link from \"@/components/link\"\" instead. This is need for \"leave page\" logic"
           }
+          // {
+          //   "name": "next/link",
+          //   "message": "Please use \"import Link from \"@web/components/link\"\" instead. This is need for \"leave page\" logic"
+          // }
         ]
       }
     ]

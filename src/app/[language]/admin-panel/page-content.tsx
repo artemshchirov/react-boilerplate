@@ -1,8 +1,8 @@
 "use client";
 
-import { RoleEnum } from "@/services/api/types/role";
-import withPageRequiredAuth from "@/services/auth/with-page-required-auth";
-import { useTranslation } from "@/services/i18n/client";
+import { RoleEnum } from "@web/services/api/types/role";
+import withPageRequiredAuth from "@web/services/auth/with-page-required-auth";
+import { useTranslation } from "@web/services/i18n/client";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";

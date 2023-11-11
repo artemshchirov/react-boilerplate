@@ -1,6 +1,6 @@
-import { useGetUsersService } from "@/services/api/services/users";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import { createQueryKeys } from "@/services/react-query/query-key-factory";
+import { useGetUsersService } from "@web/services/api/services/users";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import { createQueryKeys } from "@web/services/react-query/query-key-factory";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { UserFilterType, UserSortType } from "../user-filter-types";
 

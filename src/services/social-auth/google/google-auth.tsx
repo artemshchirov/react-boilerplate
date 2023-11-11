@@ -1,19 +1,17 @@
 "use client";
 
-import { useAuthGoogleLoginService } from "@/services/api/services/auth";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import useAuthActions from "@/services/auth/use-auth-actions";
-import useAuthTokens from "@/services/auth/use-auth-tokens";
+import { useAuthGoogleLoginService } from "@web/services/api/services/auth";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import useAuthActions from "@web/services/auth/use-auth-actions";
+import useAuthTokens from "@web/services/auth/use-auth-tokens";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { useState } from "react";
-import { FullPageLoader } from "@/components/full-page-loader";
-import useLanguage from "@/services/i18n/use-language";
+import { FullPageLoader } from "@web/components/full-page-loader";
 
 export default function GoogleAuth() {
   const { setUser } = useAuthActions();
   const { setTokensInfo } = useAuthTokens();
   const authGoogleLoginService = useAuthGoogleLoginService();
-  const language = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
 
   const onSuccess = async (tokenResponse: CredentialResponse) => {
@@ -38,7 +36,7 @@ export default function GoogleAuth() {
 
   return (
     <>
-      <GoogleLogin onSuccess={onSuccess} locale={language} />
+      <GoogleLogin onSuccess={onSuccess} locale="en" width="396px" />
       <FullPageLoader isLoading={isLoading} />
     </>
   );

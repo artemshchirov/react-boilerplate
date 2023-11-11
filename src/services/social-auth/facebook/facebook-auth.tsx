@@ -1,14 +1,14 @@
 "use client";
 
-import { useAuthFacebookLoginService } from "@/services/api/services/auth";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import useAuthActions from "@/services/auth/use-auth-actions";
-import useAuthTokens from "@/services/auth/use-auth-tokens";
+import { useAuthFacebookLoginService } from "@web/services/api/services/auth";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import useAuthActions from "@web/services/auth/use-auth-actions";
+import useAuthTokens from "@web/services/auth/use-auth-tokens";
 import { useState } from "react";
-import { FullPageLoader } from "@/components/full-page-loader";
+import { FullPageLoader } from "@web/components/full-page-loader";
 import Button from "@mui/material/Button";
 import useFacebookAuth from "./use-facebook-auth";
-import { useTranslation } from "@/services/i18n/client";
+import { useTranslation } from "@web/services/i18n/client";
 
 export default function FacebookAuth() {
   const { setUser } = useAuthActions();

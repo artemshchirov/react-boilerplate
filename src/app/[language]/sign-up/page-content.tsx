@@ -1,28 +1,28 @@
 "use client";
 import Button from "@mui/material/Button";
-import withPageRequiredGuest from "@/services/auth/with-page-required-guest";
+import withPageRequiredGuest from "@web/services/auth/with-page-required-guest";
 import { useForm, FormProvider, useFormState } from "react-hook-form";
 import {
   useAuthLoginService,
   useAuthSignUpService,
-} from "@/services/api/services/auth";
-import useAuthActions from "@/services/auth/use-auth-actions";
-import useAuthTokens from "@/services/auth/use-auth-tokens";
+} from "@web/services/api/services/auth";
+import useAuthActions from "@web/services/auth/use-auth-actions";
+import useAuthTokens from "@web/services/auth/use-auth-tokens";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import FormTextInput from "@/components/form/text-input/form-text-input";
+import FormTextInput from "@web/components/form/text-input/form-text-input";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Link from "@/components/link";
+import Link from "@web/components/link";
 import Box from "@mui/material/Box";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import { useTranslation } from "@/services/i18n/client";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import { useTranslation } from "@web/services/i18n/client";
 import Divider from "@mui/material/Divider";
 import Chip from "@mui/material/Chip";
-import SocialAuth from "@/services/social-auth/social-auth";
-import { isGoogleAuthEnabled } from "@/services/social-auth/google/google-config";
-import { isFacebookAuthEnabled } from "@/services/social-auth/facebook/facebook-config";
+import SocialAuth from "@web/services/social-auth/social-auth";
+import { isGoogleAuthEnabled } from "@web/services/social-auth/google/google-config";
+import { isFacebookAuthEnabled } from "@web/services/social-auth/facebook/facebook-config";
 
 type SignUpFormData = {
   firstName: string;

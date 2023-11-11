@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { getServerTranslation } from "@/services/i18n";
+import { getServerTranslation } from "@web/services/i18n";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import MuiLink from "@mui/material/Link";
-import { Trans } from "react-i18next/TransWithoutContext";
+import { TypographyH1 } from "../components/ui/typography/typograhy-h1";
+import { TopProjects } from "../features/dashboard";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await getServerTranslation("en", "home");
@@ -21,10 +20,7 @@ export default async function Home() {
     <Container maxWidth="md">
       <Grid container spacing={3} wrap="nowrap" pt={3}>
         <Grid item>
-          <Typography variant="h3" gutterBottom>
-            {t("title")}
-          </Typography>
-          <Typography>
+          {/* <Typography>
             <Trans
               i18nKey={`description`}
               t={t}
@@ -39,9 +35,17 @@ export default async function Home() {
                 </MuiLink>,
               ]}
             />
-          </Typography>
+          </Typography> */}
         </Grid>
       </Grid>
+      <div className="flex flex-col items-center justify-center w-full mx-auto overflow-hidden transition-all border border-gray-200 shadow-md bg-red backdrop-blur hover:border-gray-300 hover:bg-white/50">
+        <TypographyH1
+          className="pt-6 mb-4 text-3xl font-bold text-center"
+          text={t("title")}
+        />
+
+        <TopProjects />
+      </div>
     </Container>
   );
 }

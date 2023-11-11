@@ -3,7 +3,7 @@
   "actions": {
     "submit": "Sign In",
     "createAccount": "Create Account",
-    "forgotPassword": "Forgot Password?"
+    "forgotPassword": "Forgot?"
   },
   "inputs": {
     "email": {

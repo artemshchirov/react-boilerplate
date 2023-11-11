@@ -1,26 +1,26 @@
 "use client";
 import Button from "@mui/material/Button";
 import { useForm, FormProvider, useFormState } from "react-hook-form";
-import { useAuthPatchMeService } from "@/services/api/services/auth";
-import useAuthActions from "@/services/auth/use-auth-actions";
+import { useAuthPatchMeService } from "@web/services/api/services/auth";
+import useAuthActions from "@web/services/auth/use-auth-actions";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import FormTextInput from "@/components/form/text-input/form-text-input";
+import FormTextInput from "@web/components/form/text-input/form-text-input";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import withPageRequiredAuth from "@/services/auth/with-page-required-auth";
+import withPageRequiredAuth from "@web/services/auth/with-page-required-auth";
 import { useEffect } from "react";
-import useAuth from "@/services/auth/use-auth";
+import useAuth from "@web/services/auth/use-auth";
 import { useSnackbar } from "notistack";
-import Link from "@/components/link";
-import FormAvatarInput from "@/components/form/avatar-input/form-avatar-input";
-import { FileEntity } from "@/services/api/types/file-entity";
-import useLeavePage from "@/services/leave-page/use-leave-page";
+import Link from "@web/components/link";
+import FormAvatarInput from "@web/components/form/avatar-input/form-avatar-input";
+import { FileEntity } from "@web/services/api/types/file-entity";
+import useLeavePage from "@web/services/leave-page/use-leave-page";
 import Box from "@mui/material/Box";
-import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
-import { useTranslation } from "@/services/i18n/client";
-import { UserProviderEnum } from "@/services/api/types/user";
+import HTTP_CODES_ENUM from "@web/services/api/types/http-codes";
+import { useTranslation } from "@web/services/i18n/client";
+import { UserProviderEnum } from "@web/services/api/types/user";
 
 type EditProfileBasicInfoFormData = {
   firstName: string;

@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { FacebookAuthLoginResponse, FacebookContext } from "./facebook-context";
 import { facebookAppId, isFacebookAuthEnabled } from "./facebook-config";
-import { languages } from "@/services/i18n/config";
-import useLanguage from "@/services/i18n/use-language";
+import { languages } from "@web/services/i18n/config";
+import useLanguage from "@web/services/i18n/use-language";
 
 type FacebookAuthProviderProps = {
   children: React.ReactNode;

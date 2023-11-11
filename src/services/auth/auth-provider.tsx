@@ -1,7 +1,7 @@
 "use client";
 
-import { Tokens } from "@/services/api/types/tokens";
-import { User } from "@/services/api/types/user";
+import { Tokens } from "@web/services/api/types/tokens";
+import { User } from "@web/services/api/types/user";
 import {
   PropsWithChildren,
   useCallback,
@@ -17,8 +17,8 @@ import {
   TokensInfo,
 } from "./auth-context";
 import Cookies from "js-cookie";
-import useFetchBase from "@/services/api/use-fetch-base";
-import { AUTH_LOGOUT_URL, AUTH_ME_URL } from "@/services/api/config";
+import useFetchBase from "@web/services/api/use-fetch-base";
+import { AUTH_LOGOUT_URL, AUTH_ME_URL } from "@web/services/api/config";
 import HTTP_CODES_ENUM from "../api/types/http-codes";
 
 function AuthProvider(props: PropsWithChildren<{}>) {
