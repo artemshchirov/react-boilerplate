@@ -6,8 +6,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
-import Link from "@web/components/link";
+import Link from "next/link";
 import { useTranslation } from "@web/services/i18n/client";
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
@@ -17,34 +16,31 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
 
 function Profile() {
   const { user } = useAuth();
-
   const { t } = useTranslation("profile");
   return (
     <Container maxWidth="sm">
       <Grid container spacing={3} wrap="nowrap" pt={3}>
         <Grid item xs="auto">
-          <StyledAvatar
-            alt={user?.firstName + " " + user?.lastName}
-            src={user?.photo?.path}
-          />
+          <StyledAvatar alt={user?.fullName} src={user?.avatarUrl} />
         </Grid>
         <Grid item>
           <Typography variant="h3" gutterBottom>
-            {user?.firstName} {user?.lastName}
+            {user?.fullName}
           </Typography>
           <Typography variant="h5" gutterBottom>
             {user?.email}
           </Typography>
           <Grid container>
             <Grid item>
-              <Button
+              {/* <Button
                 variant="contained"
                 color="primary"
                 LinkComponent={Link}
                 href="/profile/edit"
               >
                 {t("profile:actions.edit")}
-              </Button>
+              </Button> */}
+              <Link href="/profile/edit">{t("profile:actions.edit")}</Link>
             </Grid>
           </Grid>
         </Grid>

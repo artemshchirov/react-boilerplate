@@ -5,8 +5,8 @@ import { Role } from "./role";
 import { Session } from "./session";
 
 export enum UserProviderEnum {
-  EMAIL = "email",
-  GOOGLE = "google",
+  EMAIL = "EMAIL",
+  GOOGLE = "GOOGLE",
 }
 
 enum StatusType {
@@ -31,8 +31,8 @@ export type OldUser = {
 export interface User {
   id: number;
   username: string;
-  name: string;
-  role: string;
+  fullName: string;
+  role: Role;
   provider?: UserProviderEnum;
   isAvailableForHire: boolean;
   isVerified: boolean;

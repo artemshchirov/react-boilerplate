@@ -1,7 +1,6 @@
 import { useRouter } from "next/navigation";
 import useAuth from "./use-auth";
 import React, { FunctionComponent, useEffect } from "react";
-import useLanguage from "../i18n/use-language";
 import { RoleEnum } from "../api/types/role";
 
 type PropsType = {
@@ -26,39 +25,38 @@ function withPageRequiredAuth(
   return function WithPageRequiredAuth(props: PropsType) {
     const { user, isLoaded } = useAuth();
     const router = useRouter();
-    const language = useLanguage();
-
+    const isCompleteOnboarding = user?.username;
+    console.log("USER ===>", user);
     useEffect(() => {
       const check = () => {
+        if (!isLoaded) return;
         const hasRequiredRole =
           user && user?.role?.id && optionRoles.includes(user?.role.id);
-        if (hasRequiredRole || !isLoaded) {
-          return;
-        }
+
+        if (hasRequiredRole && isCompleteOnboarding) return;
 
         const currentLocation = window.location.toString();
         const returnToPath =
-          currentLocation.replace(new URL(currentLocation).origin, "") ||
-          `/${language}`;
-        const params = new URLSearchParams({
-          returnTo: returnToPath,
-        });
+          currentLocation.replace(new URL(currentLocation).origin, "") || `/`;
 
-        let redirectTo = `/${language}/sign-in?${params.toString()}`;
+        const params = new URLSearchParams({ returnTo: returnToPath });
+        let redirectTo = `/sign-in?${params.toString()}`;
 
         if (user) {
-          redirectTo = `/${language}`;
+          if (!isCompleteOnboarding) redirectTo = "/onboarding";
+          else redirectTo = "/";
         }
 
         router.replace(redirectTo);
       };
 
       check();
-    }, [user, isLoaded, router, language]);
+    }, [user, isLoaded, router, isCompleteOnboarding]);
 
     const isAuthorized =
       user && user?.role?.id && optionRoles.includes(user?.role.id);
-    return isAuthorized ? <Component {...props} /> : null;
+    const showContent = isAuthorized && isCompleteOnboarding;
+    return showContent ? <Component {...props} /> : null;
   };
 }
 

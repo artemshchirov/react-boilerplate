@@ -5,11 +5,8 @@ import { Tokens } from "./types/tokens";
 import { TokensInfo } from "../auth/auth-context";
 import { AUTH_REFRESH_URL } from "./config";
 import { FetchInputType, FetchInitType } from "./types/fetch-params";
-import useLanguage from "../i18n/use-language";
 
 function useFetchBase() {
-  const language = useLanguage();
-
   return useCallback(
     async (
       input: FetchInputType,
@@ -19,7 +16,7 @@ function useFetchBase() {
       }
     ) => {
       let headers: HeadersInit = {
-        "x-custom-lang": language,
+        "x-custom-lang": "en",
       };
 
       if (!(init?.body instanceof FormData)) {
@@ -71,7 +68,7 @@ function useFetchBase() {
         },
       });
     },
-    [language]
+    []
   );
 }
 

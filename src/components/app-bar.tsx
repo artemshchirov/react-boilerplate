@@ -16,7 +16,7 @@ import useAuth from "@web/services/auth/use-auth";
 import useAuthActions from "@web/services/auth/use-auth-actions";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useTranslation } from "@web/services/i18n/client";
-import Link from "@web/components/link";
+import Link from "next/link";
 import { RoleEnum } from "@web/services/api/types/role";
 import Divider from "@mui/material/Divider";
 
@@ -118,26 +118,26 @@ function ResponsiveAppBar() {
               {isLoaded &&
                 !user && [
                   <Divider key="divider" />,
-                  <MenuItem
+
+                  <Link
                     key="sign-in"
-                    onClick={handleCloseNavMenu}
-                    component={Link}
                     href="/sign-in"
+                    onClick={handleCloseUserMenu}
                   >
                     <Typography textAlign="center">
                       {t("common:navigation.signIn")}
                     </Typography>
-                  </MenuItem>,
-                  <MenuItem
+                  </Link>,
+
+                  <Link
                     key="sign-up"
-                    onClick={handleCloseNavMenu}
-                    component={Link}
                     href="/sign-up"
+                    onClick={handleCloseUserMenu}
                   >
                     <Typography textAlign="center">
                       {t("common:navigation.signUp")}
                     </Typography>
-                  </MenuItem>,
+                  </Link>,
                 ]}
             </Menu>
           </Box>
@@ -191,10 +191,7 @@ function ResponsiveAppBar() {
                   sx={{ p: 0 }}
                   data-testid="profile-menu-item"
                 >
-                  <Avatar
-                    alt={user?.firstName + " " + user?.lastName}
-                    src={user.photo?.path}
-                  />
+                  <Avatar alt={user?.fullName} src={user.avatarUrl} />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -213,15 +210,16 @@ function ResponsiveAppBar() {
                 open={Boolean(anchorElementUser)}
                 onClose={handleCloseUserMenu}
               >
-                <MenuItem
-                  onClick={handleCloseUserMenu}
-                  component={Link}
+                <Link
+                  key="profile"
                   href="/profile"
+                  onClick={handleCloseUserMenu}
                 >
                   <Typography textAlign="center">
                     {t("common:navigation.profile")}
                   </Typography>
-                </MenuItem>
+                </Link>
+                ,
                 <MenuItem
                   onClick={() => {
                     logOut();

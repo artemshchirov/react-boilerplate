@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import EditProfile from "./page-content";
 import { getServerTranslation } from "@web/services/i18n";
 
-type Props = {
-  params: { language: string };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { t } = await getServerTranslation(params.language, "profile");
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await getServerTranslation("en", "profile");
 
   return {
     title: t("title1"),

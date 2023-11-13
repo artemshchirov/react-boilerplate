@@ -365,15 +365,10 @@ function Users() {
             itemContent={(index, user) => (
               <>
                 <TableCell style={{ width: 50 }}>
-                  <Avatar
-                    alt={user?.firstName + " " + user?.lastName}
-                    src={user?.photo?.path}
-                  />
+                  <Avatar alt={user?.fullName} src={user?.avatarUrl} />
                 </TableCell>
                 <TableCell style={{ width: 100 }}>{user?.id}</TableCell>
-                <TableCell style={{ width: 200 }}>
-                  {user?.firstName} {user?.lastName}
-                </TableCell>
+                <TableCell style={{ width: 200 }}>{user?.fullName}</TableCell>
                 <TableCell>{user?.email}</TableCell>
                 <TableCell style={{ width: 80 }}>
                   {tRoles(`role.${user?.role?.id}`)}

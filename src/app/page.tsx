@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getServerTranslation } from "@web/services/i18n";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import { TypographyH1 } from "../components/ui/typography/typograhy-h1";
+import { TypographyH1 } from "../components/ui/typography/typography-h1";
 import { TopProjects } from "../features/dashboard";
 
 export async function generateMetadata(): Promise<Metadata> {

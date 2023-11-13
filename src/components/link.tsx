@@ -1,4 +1,3 @@
-import useLanguage from "@web/services/i18n/use-language";
 import {
   LeavePageActionsContext,
   LeavePageContext,
@@ -12,17 +11,14 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   props,
   ref
 ) {
-  const language = useLanguage();
   const { isLeavePage } = useContext(LeavePageContext);
   const { setLeavePage, openModal } = useContext(LeavePageActionsContext);
   let href = props.href;
 
   if (typeof href === "string" && href.startsWith("/")) {
-    href = `/${language}${href}`;
+    href = `${href}`;
   } else if (typeof href === "object" && href !== null) {
-    const pathname = href.pathname
-      ? `/${language}${href.pathname}`
-      : href.pathname;
+    const pathname = href.pathname ? `${href.pathname}` : href.pathname;
     href = {
       ...href,
       pathname,
